@@ -1,0 +1,66 @@
+
+<form [formGroup]="addAchievementForm()" (ngSubmit)="addAchievement()" mode="md">
+  <ion-title class="form-title">{{ "ADD_ACHIEVEMENT.TITLE" | translate }}</ion-title>
+  <ion-row>
+    <ion-col size="12">
+      <ion-input
+        color="secondary"
+        labelPlacement="floating"
+        label="{{ 'ADD_ACHIEVEMENT.NAME'| translate }}"
+        errorText="{{ 'EMPTY_FIELD' | translate }}"
+        type="text"
+        formControlName="name"
+      />
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-input
+        color="secondary"
+        labelPlacement="floating"
+        label="{{ 'ADD_ACHIEVEMENT.REWARD'| translate }}"
+        errorText="{{ 'EMPTY_FIELD' | translate }}"
+        type="number"
+        formControlName="reward"
+      />
+    </ion-col>
+    <ion-col size="12">
+      <ion-select class="lang ion-text-large" value="" interface="popover" formControlName="level">
+        <ion-select-option value="">{{ "ADD_ACHIEVEMENT.LEVEL" | translate }}</ion-select-option>
+        <ion-select-option value="copper">{{ "ADD_ACHIEVEMENT.COPPER" | translate }}</ion-select-option>
+        <ion-select-option value="silver">{{ "ADD_ACHIEVEMENT.SILVER" | translate }}</ion-select-option>
+        <ion-select-option value="gold">{{ "ADD_ACHIEVEMENT.GOLD" | translate }}</ion-select-option>
+        <ion-select-option value="diamond">{{ "ADD_ACHIEVEMENT.DIAMOND" | translate }}</ion-select-option>
+      </ion-select>
+    </ion-col>
+    <ion-col size="12">
+      <ion-select class="lang ion-text-large" value="" interface="popover" requiredinterface="popover" formControlName="game">
+        <ion-select-option value="">{{ "ADD_ACHIEVEMENT.JUEGO" | translate }}</ion-select-option>
+        @if (games()) {
+          @for (game of games(); track $index) {
+            <ion-select-option value="{{game.name}}">{{game.name}}</ion-select-option>
+          }
+        }
+      </ion-select>
+    </ion-col>
+
+       
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="6">
+      <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker('es')" [disabled]="langEs()">
+        {{ "ADD_ACHIEVEMENT.LANG_ES" | translate }}
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker('en')" [disabled]="langEn()">
+        {{ "ADD_ACHIEVEMENT.LANG_EN" | translate }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-button fill="solid" expand="full" type="submit" [disabled]="addAchievementDisabled()"
+    >{{ "ADD_ACHIEVEMENT.BUTTON" | translate }}
+  </ion-button>
+</form>
+<ion-loading [isOpen]="isLoading()" message="{{ 'ADD_ACHIEVEMENT.LOADING_MESSAGE' | translate}}" class="custom-loading" ></ion-loading>

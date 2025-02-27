@@ -1,0 +1,33 @@
+ion-select{
+  color: var(--ion-color-primary);
+}
+
+
+.message-button{
+  position: relative;
+}
+
+.message-button::part(native){
+  overflow: visible !important;
+}
+
+.badge-message{
+  position: absolute;
+  top: -15px;
+  right: -12px;
+  z-index: 2000;
+}
+
+// ion-button{
+//   height: 40px;
+//   max-width: 105px;
+// }
+
+// @media (min-width: 1100px) {
+//   ion-button{
+//     max-width: 200px !important;
+//   }
+// }
+
+
+

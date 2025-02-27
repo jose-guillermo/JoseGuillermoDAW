@@ -1,0 +1,262 @@
+{
+  "VERSION": "Version",
+  "PRIVACY": "Privacy",
+  "PRIVACY_POLICY": {
+    "TITLE": "Privacy Policy",
+    "INTRO": "Welcome to Virtual Board Game! We take your privacy seriously and are committed to protecting your personal information. This policy outlines in detail what information we collect, how we use it, and the steps we take to keep it secure. Your trust is our priority.",
+    "DATA_COLLECTION": {
+      "TITLE": "What Information We Collect",
+      "CONTENT": "We collect essential data to provide our services, such as your email address, username, game history, and in-app purchases. Additionally, we may gather data about your interactions with our platform, including gameplay statistics, preferences, and user settings. Please note that we do not directly store payment information; all transactions are securely handled by third-party payment providers with robust security protocols."
+    },
+    "DATA_USAGE": {
+      "TITLE": "How We Use Your Data",
+      "CONTENT": "The information we collect is used to ensure the smooth functioning of our platform and to deliver a personalized experience. This includes tailoring game content to your preferences, providing prompt technical support, and maintaining a safe environment for all users. We may also analyze usage data (in an anonymized format) to identify technical issues, improve existing features, and develop new functionalities that enhance your gaming experience."
+    },
+    "DATA_SHARING": {
+      "TITLE": "Who We Share Your Data With",
+      "CONTENT": "We do not sell your personal data to third parties for marketing purposes. We only share your information with trusted partners who assist us in operating the platform, such as data hosting providers, analytics tools, and payment processors. These partners are bound by strict confidentiality agreements to ensure the secure and responsible use of your data."
+    },
+    "USER_RIGHTS": {
+      "TITLE": "Your Rights",
+      "CONTENT": "As a user, you have the right to access, update, or delete your account information at any time. You can manage your data directly through the app’s account settings or by reaching out to our support team. Additionally, you have the right to request details about how we use your data and to object to its use for specific purposes, such as data analysis. We are here to help you exercise these rights with ease."
+    },
+    "CHANGES": {
+      "TITLE": "Policy Updates",
+      "CONTENT": "We may update this Privacy Policy occasionally to reflect changes in our services, legal requirements, or security standards. Significant changes will be communicated through notices on our platform or via email. We encourage you to review this policy periodically to stay informed."
+    },
+    "CONTACT": {
+      "TITLE": "Contact Us",
+      "CONTENT": "If you have questions, comments, or concerns about our Privacy Policy, our team is ready to assist you. Send us a message through the 'Send Feedback' button in the menu, and we will make sure to respond as soon as possible."
+    },
+    "COOKIES": {
+      "TITLE": "Cookies Usage",
+      "CONTENT": "We use cookies to deliver a seamless and personalized user experience. Cookies help us remember your preferences, such as language settings and visual themes, and collect information about your interactions with our app. This data enables us to identify areas for improvement and ensure all users enjoy an optimized service."
+    }
+  },
+  "DOWNLOAD": "Download",
+
+  "TOAST": {
+    "REGISTER": "Success! The user has been created",
+    "FEEDBACK_PAGE": "Thank you for your comment. Your opinion is important to us and helps us improve every day.",
+    "INSTALL_DISMISS": "If you want to download it later, go to settings",
+    "DELETE_MESSAGE": "The message has been deleted.",
+    "REPLY_MESSAGE": "Reply sent.",
+    "ADD_PRODUCT": "Product successfully added "
+  },
+
+  "MENU": {
+    "LOGOUT": "Log out",
+    "REPLAYS": "View replays",
+    "PROFILE": "Profile",
+    "FRIENDS_LIST": "Friends list",
+    "CUSTOMIZE_GAMES": "Customize games",
+    "MESSAGES": "Messages",
+    "CLOSE": "Close menu",
+    "ADD_GAME": "Add game",
+    "ADD_PRODUCT": "Add Product",
+    "ADD_ACHIEVEMENT": "Add Achievement",
+    "SHOP": "Shop"
+  },
+
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "VALID_EMAIL": "Enter a valid email",
+    "VALID_PASSWORD": "Enter a valid password",
+    "FORGOT_PASSWORD": "Forgot your password?",
+    "REMEMBER_ME": "Remember me",
+    "LOGIN_BUTTON": "Login",
+    "SIGNUP": "Don't have an account?",
+    "LOADING_MESSAGE": "Logging in...",
+    "ERROR": {
+      "INVALID_PASSWORD": "The password must be at least 6 characters long.",
+      "INVALID_EMAIL": "Enter a valid email address.",
+      "INVALID_CREDENTIALS": "Invalid credentials. Please try again.",
+      "EMPTY_FIELD": "This field is required.",
+      "ERROR_MESSAGE": "Login failed. Please check your credentials and try again."
+    }
+  },
+
+  "REGISTER": {
+    "TITLE": "Sign Up",
+    "BUTTON": "Sign Up",
+    "EMAIL": "Email",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "ADD_PROFILE_IMG": "Add profile image (optional)",
+    "PROFILE_IMG_ALT": "Image to be uploaded",
+    "LOADING_MESSAGE": "Creating user...",
+    "HELPER_TEXT": {
+      "PASSWORD": "Your password must contain at least one uppercase letter, one lowercase letter, and one number.",
+      "EMAIL": "Please enter a valid email.",
+      "USERNAME": "Choose a unique username.",
+      "CONFIRM_PASSWORD": "Please re-enter your password."
+    },
+    "ERRORS": {
+      "REQUIRED": "This field is required.",
+      "INVALID_EMAIL": "Please enter a valid email address.",
+      "USERNAME_MIN_LENGTH": "Username must be at least 6 characters long.",
+      "PASSWORD_MIN_LENGTH": "Password must be at least 6 characters long.",
+      "INVALID_PASSWORD": "Password must contain at least one uppercase letter and one number.",
+      "PASSWORD_MISMATCH": "Passwords do not match.",
+      "BOTH": "The email and username are already registered.",
+      "EMAIL": "The email is already registered.",
+      "USERNAME": "The username is already registered."
+    }
+  },
+
+  "FEEDBACK": "Send feedback",
+  "FEEDBACK_PAGE": {
+    "TITLE": "Help Us Improve",
+    "SUBTITLE": "Share your ideas, suggestions, or issues with us",
+    "SUBJECT": "Subject",
+    "PLACEHOLDER_SUBJECT": "Enter the title of your message",
+    "BODY": "Message Body",
+    "PLACEHOLDER_BODY": "Describe your message in at least 20 characters",
+    "RADIO_BUG": "Bug report",
+    "RADIO_SUGGESTION": "Improvement proposal",
+    "LOADING_MESSAGE": "Sending message",
+    "SEND_BUTTON": "Send"
+  },
+
+  "MESSAGES": {
+    "WELCOMING_MESSAGE": {
+      "TITLE": "Welcome to Virtual Board Games! ",
+      "BODY": "thank you for registering. We’re glad to have you on board. Connect, challenge your friends, and start playing. Let the fun begin!"
+    },
+    "WELCOMING_SHOP_MESSAGE": {
+      "TITLE": "Welcome to the Shop!",
+      "BODY": "As part of your welcome, we're giving you 100 coins to customize your experience. Explore, play, and enhance your boards and pieces!"
+    }
+  },
+  
+
+  "MESSAGES_PAGE": {
+    "TITLE": "Messages list",
+    "SEND_BY": "Sent by:",
+    "READ": "Read",
+    "NO_READ": "Unread",
+    "CLOSE_MESSAGE": "Close",
+    "NO_MESSAGES": "You have no messages at the moment.",
+    "MESSAGE": {
+      "NEXT_MESSAGE": "Next",
+      "PREVIOUS_MESSAGE": "Previous",
+      "MESSAGE_DETAILS": "Message details",
+      "FROM": "From",
+      "TO": "To",
+      "DATE": "Date",
+      "TYPE": "Type",
+      "BODY": "Body",
+      "SHOP_BUTTON": "Go to the shop",
+      "REPLY_BUTTON": "Reply",
+      "TYPES" : {
+        "BUG": "Bug",
+        "SUGGESTION": "Suggestion",
+        "GAME_CHALLENGE": "Game Challenge",
+        "FRIEND_REQUEST": "Request",
+        "ACHIEVEMENT_UNLOCKED": "Achievement Unlocked",
+        "SHOP_MESSAGE": "Shop Message",
+        "WARNING": "Warning",
+        "SYSTEM_NOTIFICATION": "System Notification",
+        "ADMIN_REPLY": "Admin Reply"
+      },
+      "FILTER" : {
+        "BUG": "Bug",
+        "SUGGESTION": "Suggestion",
+        "GAME_CHALLENGE": "Challenge",
+        "FRIEND_REQUEST": "Friendship",
+        "ACHIEVEMENT_UNLOCKED": "Achievements",
+        "SHOP_MESSAGE": "Shop",
+        "WARNING": "Warning",
+        "SYSTEM_NOTIFICATION": "System",
+        "ADMIN_REPLY": "Admin",
+        "ALL": "All"
+      }
+    }
+  },
+
+  "REPLY_MODAL": {
+    "TITLE": "Send reply to ",
+    "SUBJECT": "Subject",
+    "PLACEHOLDER_SUBJECT": "Reply title",
+    "BODY": "Message body",
+    "PLACEHOLDER_BODY": "Write your reply.",
+    "LOADING_MESSAGE": "Sending message",
+    "SEND_BUTTON": "Send reply"
+  },
+
+  "NO_FAVOURITE_ACHIEVEMENT": "None",
+  "EMPTY_FIELD": "This field is required.",
+  "ADD_PRODUCT": {
+    "TITLE": "Add Product",
+    "NAME": "Product Name",
+    "PRICE": "Price",
+    "TYPE": "Type",
+    "BOARD": "Board",
+    "PIECES": "Pieces",
+    "JUEGO": "Game",
+    "ADD_IMG": "Add Image",
+    "BUTTON": "Add Product",
+    "LOADING_MESSAGE": "Loading product..."
+  },
+  "ADD_ACHIEVEMENT": {
+    "TITLE": "Add Achievement",
+    "NAME": "Achievement Name",
+    "REWARD": "Reward",
+    "LEVEL": "Level",
+    "COPPER": "Copper",
+    "SILVER": "Silver",
+    "GOLD": "Gold",
+    "DIAMOND": "Diamond",
+    "JUEGO": "Game",
+    "LANG_ES": "Select file (Spanish)",
+    "LANG_EN": "Select file (English)",
+    "BUTTON": "Save Achievement",
+    "LOADING_MESSAGE": "Saving achievement..."
+  },
+  "ADD_GAME": {
+    "TITLE": "Add Game",
+    "NAME": "Game Name",
+    "PIECES": "Pieces",
+    "ADD_PIECE": "Add Piece",
+    "ADD_THUMBNAIL": "Add Thumbnail",
+    "ADD_DEFAULT_BOARD": "Add Default Board",
+    "ADD_BOARD_IMG": "Add Board Image",
+    "ADD_DEFAULT_PIECES": "Add Default Pieces",
+    "ADD_PIECE_IMG": "Add Piece Image",
+    "BUTTON": "Add",
+    "LOADING_MESSAGE": "Loading..."
+  },  
+  "GAME": {
+    "SURRENDER_BUTTON": "Surrender",
+    "SURRENDER": {
+      "TITLE": "Are you sure you want to surrender?",
+      "TEXT": "If you surrender, you will automatically lose the game.",
+      "CANCEL": "Cancel",
+      "SURRENDER": "Surrender"
+    }
+  },
+  "HOME": {
+    "SEARCH_GAME": "Search Game",
+    "SEARCHING_GAME": "Searching for the game...",
+    "CANCEL_SEARCH_GAME": "Cancel search"
+  },
+
+  "TURN": {
+    "YOURS": "Your turn.",
+    "ENEMY": "Opponent's turn."
+  },
+  "RESULT_MODAL": {
+    "WIN": {
+      "TITLE": "Congratulations!",
+      "TEXT": "You have won the game! Great job!"
+    },
+    "LOSE": {
+      "TITLE": "Game Over",
+      "TEXT": "You have lost this time, but you can try again!"
+    },
+    "RETURN_HOME": "Return to Home"
+  }
+}

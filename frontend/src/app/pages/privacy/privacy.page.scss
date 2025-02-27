@@ -1,0 +1,27 @@
+ion-accordion ion-item{
+  background-color: var(--ion-color-secondary)
+}
+
+ion-accordion ion-item ion-label{
+  color: var(--ion-color-primary)
+}
+
+ion-accordion div{
+  background-color: var(--ion-color-light);
+  color: var(--ion-color-dark);
+}
+
+ion-accordion[expanded] ion-icon {
+  --ion-icon-color: #ff6347; /* Cambia el color del icono cuando está expandido */
+}
+
+ion-accordion ion-icon {
+  --ion-icon-color: #0000ff !important; /* Cambia el color del icono cuando está colapsado */
+}
+
+.ion-icon{
+  stroke: blue;
+}
+:host(.ion-color) ::slotted(ion-icon) {
+  color: var(--ion-color-primary) !important;
+}

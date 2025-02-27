@@ -1,0 +1,95 @@
+
+<form [formGroup]="registerForm()" (ngSubmit)="signUp()" mode="md">
+  <ion-title class="form-title">{{ "REGISTER.TITLE" | translate }}</ion-title>
+  <!-- Nombre de Usuario -->
+  <ion-row>
+    <ion-col size="12" size-sm="6">
+      <ion-input
+        color="secondary"
+        labelPlacement="floating"
+        label="{{ 'REGISTER.USERNAME'| translate }}"
+        helperText="{{ 'REGISTER.HELPER_TEXT.USERNAME' | translate}}"
+        (ionInput)="changeUserNameError()"
+        errorText="{{ userNameError() | translate }}"
+        type="text"
+        formControlName="nombreUsuario"
+      />
+    </ion-col>
+
+    <ion-col size="12" size-sm="6">
+      <ion-input
+        color="secondary"
+        labelPlacement="floating"
+        label="{{ 'REGISTER.EMAIL'| translate }}"
+        helperText="{{ 'REGISTER.HELPER_TEXT.EMAIL' | translate}}"
+        (ionInput)="changeEmailError()"
+        errorText="{{ emailError() | translate }}"
+        type="email"
+        formControlName="email"
+      />
+    </ion-col>
+
+    <ion-col size="12" size-sm="6">
+      <ion-input
+        color="secondary"
+        labelPlacement="floating"
+        label="{{ 'REGISTER.PASSWORD'| translate }}"
+        helperText="{{ 'REGISTER.HELPER_TEXT.PASSWORD' | translate}}"
+        (ionInput)="changePassError()"
+        errorText="{{passError() | translate}}"
+        formControlName="password"
+        [type]="passVisibility() ? 'text' : 'password'"
+
+        >
+      <ion-button (click)="tooglePassVisibility()" color="secondary" fill="clear" slot="end" aria-label="Show/hide">
+        <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+      </ion-button>
+      </ion-input>
+    </ion-col>
+    <ion-col size="12" size-sm="6">
+      <ion-input
+        color="secondary"
+        labelPlacement="floating"
+        label="{{ 'REGISTER.CONFIRM_PASSWORD'| translate }}"
+        helperText="{{ 'REGISTER.HELPER_TEXT.CONFIRM_PASSWORD' | translate}}"
+        (ionInput)="changeConfirmPassError()"
+        errorText="{{confirmPassError() | translate}}"
+        formControlName="confirmPassword"
+        [type]="passVisibility() ? 'text' : 'password'"
+      >
+      <ion-button (click)="tooglePassVisibility()" color="secondary" fill="clear" slot="end" aria-label="Show/hide">
+        <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+      </ion-button>
+      </ion-input>
+    </ion-col>
+    <ion-col size="12">
+
+    </ion-col>
+  </ion-row>
+  
+  <ion-item *ngIf="creationError()" class="error-message">
+    <ion-label>
+      {{ creationError()! | translate }}
+    </ion-label>
+  </ion-item>
+  <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker()">
+    {{ "REGISTER.ADD_PROFILE_IMG" | translate }}
+  </ion-button>
+
+  @if (profileImageUrl()) {
+    <ion-chip color="light">
+      <ion-avatar>
+        <ion-img [src]="profileImageUrl()" alt="{{ 'REGISTER.PROFILE_IMG_ALT' | translate }}"/>
+      </ion-avatar>
+      <ion-button (click)="delImage()" fill="clear" size="large" color="danger">
+        <ion-icon slot="icon-only" name="close-circle"/>
+      </ion-button>
+    </ion-chip>
+  }
+
+
+  <ion-button fill="solid" expand="full" type="submit" [disabled]="!registerForm().valid"
+    >{{ "REGISTER.BUTTON" | translate }}</ion-button
+  >
+</form>
+<ion-loading [isOpen]="isLoading()" message="{{ 'REGISTER.LOADING_MESSAGE' | translate}}" class="custom-loading" ></ion-loading>

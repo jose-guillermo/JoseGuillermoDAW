@@ -1,0 +1,92 @@
+
+
+<form [formGroup]="addGameForm()" (ngSubmit)="addGame()" mode="md">
+    <ion-title class="form-title">{{ "ADD_GAME.TITLE" | translate }}</ion-title>
+    <ion-row>
+      <ion-col size="12">
+        <ion-input
+          color="secondary"
+          labelPlacement="floating"
+          label="{{ 'ADD_GAME.NAME'| translate }}"
+          errorText="{{ 'EMPTY_FIELD' | translate }}"
+          type="text"
+          formControlName="name"
+        />
+      </ion-col>
+  
+      <ion-col size="12">
+        <ion-input
+          color="secondary"
+          labelPlacement="floating"
+          label="{{ 'ADD_GAME.PIECES'| translate }}"
+          errorText="{{ 'EMPTY_FIELD' | translate }}"
+          type="text"
+          formControlName="piece"
+        />
+        <ion-button color="secondary" (click)="addPiece()">{{ 'ADD_GAME.ADD_PIECE'| translate }}</ion-button>
+      </ion-col>
+      <ion-col size="12">
+        <ion-list>
+          @if(pieces().length > 0) {
+            @for(piece of pieces(); track $index) {
+              <ion-item>
+                <ion-label>{{ piece }}</ion-label>
+                <ion-button (click)="deletePiece(piece)" class="button-delete" slot="end" fill="clear" shape="round">
+                  <ion-icon slot="icon-only" color="danger" name="trash-bin"></ion-icon>
+                </ion-button>
+              </ion-item>   
+            }
+          }
+        </ion-list>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label style="display: block;">{{ "ADD_GAME.ADD_THUMBNAIL" | translate }}</ion-label>
+
+        <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker('thumbnail')" [disabled]="thumbnailImg() !== null">
+          {{ "ADD_GAME.ADD_THUMBNAIL" | translate }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="12">
+        @if (thumbnailImgUrl()) {
+          <ion-img [src]="thumbnailImgUrl()"/>
+        }
+      </ion-col >
+      <ion-col size="12">
+        <ion-label style="display: block;">{{ "ADD_GAME.ADD_DEFAULT_BOARD" | translate }}</ion-label>
+
+        <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker('board')" [disabled]="boardImg() !== null">
+          {{ "ADD_GAME.ADD_BOARD_IMG" | translate }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="12">
+        @if (boardImgUrl()) {
+          <ion-img [src]="boardImgUrl()"/>
+        }
+      </ion-col>
+      <ion-col size="12">
+        <ion-label style="display: block;">{{ "ADD_GAME.ADD_DEFAULT_PIECES" | translate }}</ion-label>
+        @if(piecesImgs().length < pieces().length) {
+          <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker('team1_' + pieces()![piecesImgs().length])" [disabled]="piecesImgs().length === pieces().length * 2">
+            {{ "ADD_GAME.ADD_PIECE_IMG" | translate }}, {{ pieces()![piecesImgs().length] }} (equipo1)
+          </ion-button>
+        } @else {
+          <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker('team2_' + pieces()![piecesImgs().length - pieces().length])" [disabled]="piecesImgs().length === pieces().length * 2">
+            {{ "ADD_GAME.ADD_PIECE_IMG" | translate }}, {{ pieces()![piecesImgs().length - pieces().length] }} (equipo2)
+          </ion-button>
+        }
+      </ion-col>
+      <ion-col size="12">
+        @if (piecesImgsUrl()) {
+          @for (img of piecesImgsUrl(); track $index) {
+            <ion-img [src]="img"/>
+            
+          }
+        }
+      </ion-col>
+    </ion-row>
+    <ion-button fill="solid" expand="full" type="submit" [disabled]="addGameDisabled()"
+      >{{ "ADD_GAME.BUTTON" | translate }}
+    </ion-button>
+  </form>
+  <ion-loading [isOpen]="isLoading()" message="{{ 'ADD_GAME.LOADING_MESSAGE' | translate}}" class="custom-loading" ></ion-loading>
+  

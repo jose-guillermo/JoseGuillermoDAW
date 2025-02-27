@@ -1,0 +1,19 @@
+@if (user) {
+  <ion-card class="user-card">
+    <ion-item lines="none" color="primary">
+      <ion-avatar slot="start">
+        @defer () {
+          <ion-img src="{{ 'user' | image:'perfil':user.id }}" (ionError)="onImageError($event)" />
+        } @placeholder {
+          <div>
+            <ion-img src="assets/preloader-dark.svg" />
+          </div>
+        }
+      </ion-avatar>
+      <ion-label>
+        <h2 class="username">{{ user.userName }}</h2>
+        <p class="achievement">🏆 {{ achievement() | translate }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+}

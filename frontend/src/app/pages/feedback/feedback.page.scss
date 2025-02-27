@@ -1,0 +1,22 @@
+
+ion-card{
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+ion-textarea, ion-input{
+  --background: var(--ion-color-secondary) !important;
+  --color: var(--ion-color-primary) !important;
+}
+
+ion-card-header{
+  border-bottom: solid 2px var(--ion-color-secondary);
+}
+
+.textarea-bottom.sc-ion-textarea-md{
+  color: red !important;
+}
+
+.counter {
+  color: red !important;
+}

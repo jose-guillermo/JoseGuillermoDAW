@@ -1,0 +1,55 @@
+<ion-card color="secondary" mode="md">
+  <ion-card-header>
+    <ion-card-title>{{ "LOGIN.TITLE" | translate }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <form [formGroup]="loginForm()" (ngSubmit)="login()">
+      <ion-input
+        class="ion-margin-vertical"
+        (ionInput)="changeEmailError()"
+        fill="outline"
+        type="email"
+        formControlName="email"
+        labelPlacement="stacked"
+        helperText="{{ 'LOGIN.VALID_EMAIL' | translate}}"
+        label="{{ 'LOGIN.EMAIL' | translate }}"
+        placeholder="email@domain.com"
+        errorText="{{ emailError() | translate }}"
+      />
+      <ion-input
+        class="ion-margin-vertical"
+        (ionInput)="changePassError()"
+        fill="outline"
+        [type]="passVisibility() ? 'text' : 'password'"
+        formControlName="password"
+        labelPlacement="stacked"
+        helperText="{{ 'LOGIN.VALID_PASSWORD' | translate}}"
+        label="{{ 'LOGIN.PASSWORD' | translate }}"
+        errorText="{{ passError() | translate }}"
+      >
+        <ion-button (click)="tooglePassVisibility()" fill="clear" slot="end" aria-label="Show/hide">
+          <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+        </ion-button>
+      </ion-input>
+
+      <ion-button expand="full" fill="solid" type="submit" [disabled]="loginForm().invalid">
+        {{ 'LOGIN.LOGIN_BUTTON' | translate }}
+      </ion-button>
+    </form>
+    <ion-item *ngIf="showErrorMessage()" class="error-message">
+      <ion-label>
+        {{ "LOGIN.ERROR.ERROR_MESSAGE" | translate }}
+      </ion-label>
+    </ion-item>
+    
+    <div class="ion-margin-top">
+      <p class="extra-text">
+        {{ "LOGIN.SIGNUP" | translate}}
+        <a id="open-loading" routerLink="/signup" routerLinkActive="router-link-active">{{ "REGISTER.TITLE" | translate}}</a>
+      </p>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-loading [isOpen]="isLoading()" message="{{ 'LOGIN.LOADING_MESSAGE' | translate}}" class="custom-loading" ></ion-loading>

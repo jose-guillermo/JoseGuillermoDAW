@@ -1,0 +1,43 @@
+<ion-card color="primary">
+  <ion-card-header>
+    <ion-card-title>{{ "FEEDBACK_PAGE.TITLE" | translate}}</ion-card-title>
+    <ion-card-subtitle>{{ "FEEDBACK_PAGE.SUBTITLE" | translate}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <form [formGroup]="messageForm()" (ngSubmit)="sendMessage()" color="primary" mode="md">
+      <ion-input
+        class="ion-padding-horizontal ion-margin-vertical"
+        color="primary"
+        fill="solid"
+        type="text"
+        labelPlacement="stacked"
+        formControlName="subject"
+        label="{{ 'FEEDBACK_PAGE.SUBJECT' | translate }}"
+        placeholder="{{ 'FEEDBACK_PAGE.PLACEHOLDER_SUBJECT' | translate }}"
+      />
+      <ion-textarea
+        class="ion-margin-vertical"
+        counter="true"
+        maxlength="1000"
+        formControlName="body"
+        color="primary"
+        fill="solid"
+        labelPlacement="stacked"
+        rows="7"
+        label="{{ 'FEEDBACK_PAGE.BODY' | translate }}"
+        placeholder="{{ 'FEEDBACK_PAGE.PLACEHOLDER_BODY' | translate }}"
+      >
+      </ion-textarea>
+      <ion-radio-group formControlName="type">
+        <ion-radio class="ion-margin-end ion-margin-bottom" color="secondary" value="SUGGESTION" labelPlacement="end">{{ "FEEDBACK_PAGE.RADIO_SUGGESTION" | translate }}</ion-radio>
+        <ion-radio color="secondary" value="BUG" labelPlacement="end">{{ "FEEDBACK_PAGE.RADIO_BUG" | translate }}</ion-radio><br />
+      </ion-radio-group>
+
+      <ion-button block color="secondary" type="submit" [disabled]="messageForm().invalid">
+        {{ 'FEEDBACK_PAGE.SEND_BUTTON' | translate}}
+      </ion-button>
+    </form>
+  </ion-card-content>
+</ion-card>
+<ion-loading [isOpen]="isLoading()" message="{{ 'FEEDBACK_PAGE.LOADING_MESSAGE' | translate}}" class="custom-loading" ></ion-loading>

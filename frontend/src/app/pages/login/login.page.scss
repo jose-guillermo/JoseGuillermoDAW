@@ -1,0 +1,14 @@
+ion-card{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.extra-text{
+  color: var(--ion-color-medium);
+}
+
+.extra-text, a {
+  font-size: small;
+  font-style: italic;
+}
+

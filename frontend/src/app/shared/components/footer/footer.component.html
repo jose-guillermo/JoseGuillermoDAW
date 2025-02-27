@@ -1,0 +1,18 @@
+<ion-footer>
+  <ion-toolbar color="secondary">
+
+      <ion-buttons slot="end">
+        @if ( userLogin() && !isAdmin() ) {
+          <ion-button mode="md" routerLink="feedback" routerLinkActive="router-link-active" class="ion-margin-horizontal button-policy" fill="solid">
+            {{ "FEEDBACK" | translate }}
+          </ion-button>
+
+        }
+        <ion-button mode="md" [routerLink]="privacyRoute()" routerLinkActive="router-link-active" class="ion-margin-horizontal button-policy" routerLinkActive="privacy"  fill="solid">
+          {{ "PRIVACY" | translate }}
+        </ion-button>
+
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>

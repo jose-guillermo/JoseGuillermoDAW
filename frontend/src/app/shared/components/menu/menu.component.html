@@ -1,0 +1,81 @@
+<ion-buttons slot="end" class="ion-padding-horizontal">
+  @if( userLogin() ) {
+    <!-- Si esta logeado -->
+    
+    @if (isAdmin()) {
+      <!-- Si esta logeado y es administrador -->
+      <ion-button routerLink="messages" routerLinkActive="router-link-active" class="ion-hide-lg-down message-button" fill="solid">
+        {{ "MENU.MESSAGES" | translate }}
+        @if(numNoReadMessages()){
+          <ion-badge color="danger" mode="ios" class="badge-message">{{ numNoReadMessages() }}</ion-badge>
+        }
+      </ion-button>
+      <ion-button routerLink="add-game" routerLinkActive="router-link-active" class="ion-hide-lg-down" fill="solid">
+        {{ "MENU.ADD_GAME" | translate }}
+      </ion-button>
+      <ion-button routerLink="add-product" routerLinkActive="router-link-active" class="ion-hide-lg-down" fill="solid">
+        {{ "MENU.ADD_PRODUCT" | translate }}
+      </ion-button>
+      <ion-button routerLink="add-achievement" routerLinkActive="router-link-active" class="ion-hide-lg-down" fill="solid">
+        {{ "MENU.ADD_ACHIEVEMENT" | translate }}
+      </ion-button>
+
+    } @else {
+      <!-- Si esta logeado pero no es administrador -->
+      <shared-component-user-card [user]="user()" class="ion-hide-lg-down"/>
+
+      <ion-button routerLink="messages" routerLinkActive="router-link-active" class="ion-hide-lg-down message-button" fill="solid">
+        {{ "MENU.MESSAGES" | translate }}
+        @if(numNoReadMessages()){
+          <ion-badge color="danger" mode="ios" class="badge-message">{{ numNoReadMessages() }}</ion-badge>
+        }
+      </ion-button>
+      <ion-button routerLink="shop" routerLinkActive="router-link-active" class="ion-hide-lg-down" fill="solid">
+        {{ "MENU.SHOP" | translate }}
+      </ion-button>
+    }
+
+    <ion-button (click)="logout()" color="danger" routerLinkActive="router-link-active" class="ion-hide-lg-down" fill="solid">
+      {{ "MENU.LOGOUT" | translate }}
+    </ion-button>
+    
+    <ion-button>
+      <ion-select class="lang ion-text-large" [value]="selectedLang()" (ionChange)="changeLanguage($event)"
+        interface="popover">
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+      </ion-select>
+    </ion-button>
+
+    <ion-button (click)="changeTheme()">
+      <ion-icon slot="icon-only" [name]="themeIcon()" />
+    </ion-button>
+
+    <ion-menu-button menu="menu" class="ion-hide-lg-up" />
+
+  } @else {
+    <!-- Si no está logeado -->
+    <ion-button>
+      <ion-select class="lang ion-text-large" [value]="selectedLang()" (ionChange)="changeLanguage($event)"
+        interface="popover">
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+      </ion-select>
+    </ion-button>
+    <ion-button (click)="changeTheme()">
+      <ion-icon slot="icon-only" [name]="themeIcon()" />
+    </ion-button>
+
+    <ion-button [routerLink]="['/login']" class="ion-hide-sm-up">
+      <ion-icon slot="icon-only" name="log-in"></ion-icon>
+    </ion-button>
+    <ion-button [routerLink]="['/login']" routerLinkActive="router-link-active" class="ion-hide-sm-down" fill="outline"
+      shape="round">
+      {{ "LOGIN.TITLE" | translate }}
+    </ion-button>
+  }
+
+
+
+
+</ion-buttons>

@@ -1,0 +1,8 @@
+.fixed-button {
+  position: fixed;
+  bottom: 10px; /* Distancia desde el borde inferior */
+  left: 10px;   /* Distancia desde el borde izquierdo */
+  z-index: 10000; /* Asegura que el botón quede encima de otros elementos */
+}
+
+

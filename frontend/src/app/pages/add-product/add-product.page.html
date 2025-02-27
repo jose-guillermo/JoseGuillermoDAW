@@ -1,0 +1,66 @@
+
+<form [formGroup]="addProductForm()" (ngSubmit)="addProduct()" mode="md">
+  <ion-title class="form-title">{{ "ADD_PRODUCT.TITLE" | translate }}</ion-title>
+  <ion-row>
+    <ion-col size="12">
+      <ion-input
+        color="secondary"
+        labelPlacement="floating"
+        label="{{ 'ADD_PRODUCT.NAME'| translate }}"
+        errorText="{{ 'EMPTY_FIELD' | translate }}"
+        type="text"
+        formControlName="name"
+      />
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-input
+        color="secondary"
+        labelPlacement="floating"
+        label="{{ 'ADD_PRODUCT.PRICE'| translate }}"
+        errorText="{{ 'EMPTY_FIELD' | translate }}"
+        type="number"
+        formControlName="price"
+      />
+    </ion-col>
+    <ion-col size="12">
+      <ion-label style="display: block;">{{ "ADD_PRODUCT.TYPE" | translate }}</ion-label>
+      <ion-radio-group formControlName="type" (ionChange)="delImage()">
+        <ion-radio class="ion-margin-end ion-margin-bottom" color="secondary" value="board" labelPlacement="end">{{ "ADD_PRODUCT.BOARD" | translate }}</ion-radio>
+        <ion-radio color="secondary" value="pieces" labelPlacement="end">{{ "ADD_PRODUCT.PIECES" | translate }}</ion-radio><br />
+      </ion-radio-group>
+    </ion-col>
+    <ion-col size="12">
+      <ion-select class="lang ion-text-large" value="" interface="popover" requiredinterface="popover" formControlName="game" (ionChange)="changeGame()">
+        <ion-select-option value="">{{ "ADD_PRODUCT.JUEGO" | translate }}</ion-select-option>
+        @if (games()) {
+          @for (game of games(); track $index) {
+            <ion-select-option value="{{game.name}}">{{game.name}}</ion-select-option>
+          }
+        }
+      </ion-select>
+    </ion-col>       
+  </ion-row>
+
+  @if(addProductForm().value.type === "board" ){
+    <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker('board')" [disabled]="images().length === 1">
+      {{ "ADD_PRODUCT.ADD_IMG" | translate }}
+    </ion-button>
+  } @else if (addProductForm().value.type === "pieces" && addProductForm().value.game !== "") {
+    <ion-button class="ion-margin-vertical" expand="block" color="medium" (click)="openFilePicker(currentPieces()![images().length])" [disabled]="images().length === currentPieces()?.length">
+      {{ "ADD_PRODUCT.ADD_IMG" | translate }}, {{ currentPieces()![images().length] }}
+    </ion-button>
+  }
+
+  @if (imagesUrl()) {
+    @for (img of imagesUrl(); track $index) {
+      <ion-img [src]="img"/>
+    }
+  }
+
+
+  <ion-button fill="solid" expand="full" type="submit" [disabled]="addProductDisabled()"
+    >{{ "ADD_PRODUCT.BUTTON" | translate }}
+  </ion-button>
+</form>
+<ion-loading [isOpen]="isLoading()" message="{{ 'ADD_PRODUCT.LOADING_MESSAGE' | translate}}" class="custom-loading" ></ion-loading>

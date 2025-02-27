@@ -1,0 +1,40 @@
+.result-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .modal-content {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.3s ease-in-out;
+  
+      ion-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 18px;
+        color: #666;
+      }
+    }
+  
+    .win {
+      border: 3px solid #28a745;
+      background: #d4edda;
+      color: #155724;
+    }
+  
+    .lose {
+      border: 3px solid #dc3545;
+      background: #f8d7da;
+      color: #721c24;
+    }
+}
+ion-button{
+    background-color: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+}

@@ -1,0 +1,27 @@
+<ion-header [translucent]="true" mode="md">
+  <ion-toolbar color="secondary">
+    <ion-img routerLink="/" class="logo clickable" src="assets/{{ logo() }}"></ion-img>
+    <ion-buttons slot="end">
+      <ion-button (click)="surrender()" color="danger" fill="solid">
+        {{ "GAME.SURRENDER_BUTTON" | translate }}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="light" class="ion-padding" [fullscreen]="true">
+  <ion-row>
+    <ion-col size="12" size-md="6">
+      <game-board-damas (turn)="changeTurn($event)" (victory)="showResultModal($event)"/>
+      
+    </ion-col>
+    <ion-col size="12" size-md="6">
+      <ion-label class="turn-indicator">
+        {{ "TURN." + turn() | translate }}
+      </ion-label>
+      
+      <shared-component-user-card style="display: block; margin-top: 15px;" [user]="player2()"/>
+      <ion-img class="vs" style="display: block;" src="assets/{{ vs() }}"></ion-img>
+      <shared-component-user-card style="display: block;" [user]="player1()"/>
+    </ion-col>
+  </ion-row>
+</ion-content>

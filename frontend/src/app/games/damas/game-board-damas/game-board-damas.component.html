@@ -1,0 +1,30 @@
+
+<div class="card bg-dark text-white">
+  <img src="https://res.cloudinary.com/dkwordgbe/image/upload/v1740093139/product/product_67b7b6cf52806/board.webp" class="card-img" alt="tablero">
+  <div class="card-img-overlay">
+    <table class="checkers-board" role="presentation">
+      @for (row of board(); track row; let i = $index) {
+        <tr>
+          @for (cell of row; track cell; let j = $index) {
+            <td [class.highlight]="cell.isPossibleMove"
+                (click)="selectCell(i, j)">
+              <div class="piece-container">
+                @if(cell.piece?.color === 'black' && cell.piece?.type === 'peon') {
+                  <img width="100%" alt="Ficha de un peón negro" src="{{ 'product' | image:'team2_peon':productIdPieces()!  }}"/>
+                } @else if (cell.piece?.color === 'black' && cell.piece?.type === 'dama') {
+                  <img width="100%" alt="Ficha de una dama negra" src="{{ 'product' | image:'team2_dama':productIdPieces()!  }}"/>
+                } @else if (cell.piece?.color === 'white' && cell.piece?.type === 'peon') {
+                  <img width="100%" alt="Ficha de un peón blanco" src="{{ 'product' | image:'team1_peon':productIdPieces()!  }}"/>
+                } @else if (cell.piece?.color === 'white' && cell.piece?.type === 'dama') {
+                  <img width="100%" alt="Ficha de una dama blanca" src="{{ 'product' | image:'team1_dama':productIdPieces()!  }}"/>
+                } @else {
+                  <img width="100%" src="assets/fondo-transparente.webp" alt="Imagen transparente"/>
+                }
+              </div>
+            </td>
+          }
+        </tr>
+      }
+    </table>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.user-card{
+  width: auto;
+  border-radius: 100px;
+  display: inline-block;
+  margin: 0 10px;
+
+  ion-item{
+    width: 250px;
+    padding: 0;
+    margin: 0;
+    ion-label{
+      margin: 0;
+    }
+  }
+}

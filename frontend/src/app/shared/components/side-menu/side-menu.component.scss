@@ -1,0 +1,12 @@
+ion-item{
+  --inner-border-width: 0;
+  --ion-color-contrast: var(--ion-color-secondary) !important;
+}
+
+.logout-button{
+  --ion-color-contrast: white !important;
+}
+
+ion-item{
+  border-bottom: solid 1px var(--ion-color-secondary);
+}

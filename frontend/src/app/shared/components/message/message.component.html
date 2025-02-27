@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="end">
+      <ion-button color="danger" fill="solid" (click)="close()">{{ "MESSAGES_PAGE.CLOSE_MESSAGE" | translate }}</ion-button>
+    </ion-buttons>
+    <ion-title>{{ "MESSAGES_PAGE.MESSAGE.MESSAGE_DETAILS" | translate }}</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content mode="md" color="light" class="ion-padding">
+
+  <ion-card color="light" class="ion-no-border">
+    <ion-card-header>
+      <ion-title color="secondary" class="ion-margin-bottom">{{ message!.title | translate }}</ion-title>
+      <p><strong>{{ "MESSAGES_PAGE.MESSAGE.FROM" | translate }}:</strong> {{ message!.sender }}</p>
+      <p><strong>{{ "MESSAGES_PAGE.MESSAGE.TO" | translate }}:</strong> {{ user()!.userName }}</p>
+      <p><strong>{{ "MESSAGES_PAGE.MESSAGE.DATE" | translate }}:</strong> {{ message!.creationDate | date: 'dd/MM/yyyy - HH:mm' }}</p>
+      <p><strong>{{ "MESSAGES_PAGE.MESSAGE.TYPE" | translate }}:</strong> {{ "MESSAGES_PAGE.MESSAGE.TYPES." + message!.type | translate }}</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-title color="secondary" class="ion-margin-bottom">{{ "MESSAGES_PAGE.MESSAGE.BODY" | translate }}</ion-title>
+      <p>{{ message!.body | translate }}</p>
+      @if (message!.type === "SHOP_MESSAGE") {
+        <ion-button routerLink="shop" (click)="close()" expand="block" color="secondary" shape="round">
+          {{ "MESSAGES_PAGE.MESSAGE.SHOP_BUTTON" | translate }}
+        </ion-button>  
+      }
+      @if (message!.type === "SUGGESTION" || message!.type === "BUG") {
+        <ion-button (click)="replyMessage()" expand="block" color="secondary" shape="round">
+          {{ "MESSAGES_PAGE.MESSAGE.REPLY_BUTTON" | translate }}
+        </ion-button>  
+      }
+      <ion-toolbar color="light">
+        <ion-buttons slot="start">
+          <ion-button [disabled]="disablePrevious" (click)="previous()" color="secondary">
+            <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+            {{ "MESSAGES_PAGE.MESSAGE.PREVIOUS_MESSAGE" | translate }}
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button [disabled]="disableNext" (click)="next()" color="secondary">
+            {{ "MESSAGES_PAGE.MESSAGE.NEXT_MESSAGE" | translate }}
+            <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

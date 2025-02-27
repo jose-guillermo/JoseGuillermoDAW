@@ -1,0 +1,9 @@
+ion-button{
+    width: 100%;
+    --background: var(--ion-color-secondary)
+}
+
+h3 {
+    background: radial-gradient(circle, rgba(var(--ion-color-primary-rgb), 0.6) 60%, rgba(var(--ion-color-primary-rgb), 0) 100%);
+    color: var(--ion-color-primary);
+}

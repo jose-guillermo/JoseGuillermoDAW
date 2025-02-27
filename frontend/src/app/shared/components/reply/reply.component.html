@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="end">
+      <ion-button color="danger" fill="solid" (click)="close()">{{ "MESSAGES_PAGE.CLOSE_MESSAGE" | translate }}</ion-button>
+    </ion-buttons>
+    <ion-title>{{ "REPLY_MODAL.TITLE" | translate }} {{ sender }}</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="light" class="ion-padding">
+  <form [formGroup]="replyForm()" (ngSubmit)="sendMessage()" color="primary" mode="md">
+    <ion-input
+      class="ion-padding-horizontal ion-margin-vertical"
+      fill="solid"
+      color="primary"
+      type="text"
+      labelPlacement="stacked"
+      formControlName="subject"
+      label="{{ 'REPLY_MODAL.SUBJECT' | translate }}"
+      placeholder="{{ 'REPLY_MODAL.PLACEHOLDER_SUBJECT' | translate }}"
+    />
+    <ion-textarea
+      class="ion-margin-vertical"
+      fill="solid"
+      color="primary"
+      formControlName="body"
+      labelPlacement="stacked"
+      rows="7"
+      label="{{ 'REPLY_MODAL.BODY' | translate }}"
+      placeholder="{{ 'REPLY_MODAL.PLACEHOLDER_BODY' | translate }}"
+    >
+    </ion-textarea>
+
+    <ion-button expand="block" color="secondary" type="submit" [disabled]="replyForm().invalid">
+      {{ "REPLY_MODAL.SEND_BUTTON" | translate }}
+    </ion-button>
+  </form>
+</ion-content>
+  
+<ion-loading [isOpen]="isLoading()" message="{{ 'REPLY_MODAL.LOADING_MESSAGE' | translate}}" class="custom-loading" ></ion-loading>

@@ -1,0 +1,7 @@
+{
+  "name": "virtual-board-games",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

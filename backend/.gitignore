@@ -1,0 +1,9 @@
+# archivos para ignorar
+.env
+composer.phar
+
+# db/inidb.php
+# db/inidb.sql
+
+# directorios para ignorar
+vendor/

@@ -1,0 +1,45 @@
+<ion-title mode="md">{{ "MESSAGES_PAGE.TITLE" | translate }}</ion-title>
+
+@if(messages() !== null) {
+  <ion-segment color="secondary" scrollable value="" (ionChange)="changeFilter($event)" >
+    <ion-segment-button color="secondary" value="">
+      <ion-label>{{ "MESSAGES_PAGE.MESSAGE.FILTER.ALL" | translate }}</ion-label>
+    </ion-segment-button>
+    @for (type of types(); track $index){
+      <ion-segment-button color="secondary" value="{{ type }}">
+        <ion-label>{{ "MESSAGES_PAGE.MESSAGE.FILTER." + type | translate }}</ion-label>
+      </ion-segment-button>
+    }
+  </ion-segment>
+  <ion-list  class="ion-no-padding" mode="ios">
+    @for (message of messages(); track $index) {
+
+      <ion-item class="ion-no-border" color="light">
+        <ion-button (click)="showMessage(message, $index)" class="button-read" slot="start" fill="clear" shape="round">
+          <ion-icon slot="icon-only" color="secondary" name="mail" size="large"></ion-icon>
+        </ion-button>
+        <ion-label>
+          <h2>{{ message.title | translate }}</h2>
+          <p>{{ "MESSAGES_PAGE.SEND_BY" | translate }} <strong>{{ message.sender }}</strong></p>
+          @if (message.read) {
+            <ion-button color="success" fill="solid" shape="round" class="no-clickable">
+              {{ "MESSAGES_PAGE.READ" | translate }}
+            </ion-button>
+          } @else {
+            <ion-button color="warning" fill="solid" shape="round" class="no-clickable">
+              {{ "MESSAGES_PAGE.NO_READ" | translate }}
+            </ion-button>
+          }
+        </ion-label>
+        <ion-button (click)="deleteMessage(message.id)" class="button-delete" slot="end" fill="clear" size="large" shape="round">
+          <ion-icon slot="icon-only" color="danger" name="trash-bin" size="large"></ion-icon>
+        </ion-button>
+      </ion-item>
+    }
+  </ion-list>
+
+} @else {
+  <p class="alert">
+    {{ "MESSAGES_PAGE.NO_MESSAGES" | translate}}
+  </p>
+}

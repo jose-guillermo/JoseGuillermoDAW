@@ -1,0 +1,7 @@
+<ion-content class="ion-padding result-modal">
+  <div class="modal-content" [ngClass]="result">
+    <ion-title>{{ 'RESULT_MODAL.' + result + '.TITLE' | translate }}</ion-title>
+    <p>{{ 'RESULT_MODAL.' + result + '.TEXT' | translate }}</p>
+    <ion-button expand="full" (click)="closeModal()">{{ 'RESULT_MODAL.RETURN_HOME' | translate }}</ion-button>
+  </div>
+</ion-content>

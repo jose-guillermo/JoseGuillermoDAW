@@ -1,0 +1,46 @@
+<ion-title>{{ 'PRIVACY_POLICY.TITLE' | translate }}</ion-title>
+<p>{{ 'PRIVACY_POLICY.INTRO' | translate }}</p>
+
+<ion-accordion-group [multiple]="true">
+  <ion-accordion value="first" toggleIcon="caret-down-circle" toggleIconSlot="start">
+    <ion-item slot="header" color="secondary">
+      <ion-label>{{ 'PRIVACY_POLICY.DATA_COLLECTION.TITLE' | translate }}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">{{ 'PRIVACY_POLICY.DATA_COLLECTION.CONTENT' | translate }}</div>
+  </ion-accordion>
+
+  <ion-accordion value="second" toggleIcon="caret-down-circle" toggleIconSlot="start">
+    <ion-item slot="header" color="secondary">
+      <ion-label>{{ 'PRIVACY_POLICY.DATA_USAGE.TITLE' | translate }}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">{{ 'PRIVACY_POLICY.DATA_USAGE.CONTENT' | translate }}</div>
+  </ion-accordion>
+
+  <ion-accordion value="third" toggleIcon="caret-down-circle" toggleIconSlot="start">
+    <ion-item slot="header" color="secondary">
+      <ion-label>{{ 'PRIVACY_POLICY.DATA_SHARING.TITLE' | translate }}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">{{ 'PRIVACY_POLICY.DATA_SHARING.CONTENT' | translate }}</div>
+  </ion-accordion>
+
+  <ion-accordion value="fourth" toggleIcon="caret-down-circle" toggleIconSlot="start">
+    <ion-item slot="header" color="secondary">
+      <ion-label>{{ 'PRIVACY_POLICY.CHANGES.TITLE' | translate }}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">{{ 'PRIVACY_POLICY.CHANGES.CONTENT' | translate }}</div>
+  </ion-accordion>
+
+  <ion-accordion value="fifth" toggleIcon="caret-down-circle" toggleIconSlot="start">
+    <ion-item slot="header" color="secondary">
+      <ion-label>{{ 'PRIVACY_POLICY.CONTACT.TITLE' | translate }}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">{{ 'PRIVACY_POLICY.CONTACT.CONTENT' | translate }}</div>
+  </ion-accordion>
+  
+  <ion-accordion value="sixth" toggleIcon="caret-down-circle" toggleIconSlot="start">
+    <ion-item slot="header" color="secondary">
+      <ion-label>{{ 'PRIVACY_POLICY.COOKIES.TITLE' | translate }}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">{{ 'PRIVACY_POLICY.COOKIES.CONTENT' | translate }}</div>
+  </ion-accordion>
+</ion-accordion-group>

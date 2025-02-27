@@ -1,0 +1,42 @@
+<ion-row class="ion-justify-content-start ion-align-items-start">
+     
+  @for (product of products(); track $index) {
+    <ion-col class="ion-no-padding" size="6" size-sm="4" size-md="3" size-lg="2">
+      <ion-card color="secondary">
+        @if (product.type === "board") {
+          @defer () {
+            <ion-img src="{{ 'product' | image:'board':product.id }}" (ionError)="onImageError($event)" />
+          } @placeholder {
+            <div>
+              <ion-img src="assets/preloader-dark.svg" />
+            </div>
+          }
+        } @else if(product.type === "pieces") {
+          <swiper-container [slidesPerView]="1.1" free-mode="true">
+            @for (piece of getAllPieces(product.game); track $index) {
+              <swiper-slide>
+                @defer () {
+                  <ion-img src="{{ 'product' | image:piece:product.id }}" (ionError)="onImageError($event)" />
+                } @placeholder {
+                  <div>
+                    <ion-img src="assets/preloader-dark.svg" />
+                  </div>
+                }
+              </swiper-slide>
+            }
+          </swiper-container>
+        }
+        <ion-card-header>
+          <ion-card-title>{{product.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p><strong>puntos:</strong> {{product.price}}</p>
+          <p><strong>Juego:</strong> {{product.game}}</p>
+          <p><strong>Tipo:</strong> {{product.type}}</p>
+          <ion-button expand="full" color="primary">Comprar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  }
+
+</ion-row>

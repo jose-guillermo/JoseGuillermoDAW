@@ -1,0 +1,34 @@
+<!-- @if(user()) {
+  <ion-button (click)="searchGame('games_dafdasfadf')" expand="block" fill="clear" shape="round">
+    Buscar partida
+  </ion-button>
+} -->
+
+@if(games()) {
+  <swiper-container [slidesPerView]="slidesPerView()" free-mode="true">
+    @for (game of games(); track $index) {
+      <swiper-slide class="ion-padding">
+          @defer () {
+            <div class="card bg-dark text-white">
+              <img src="{{ 'game' | image:'thumbnail':game.id  }}" class="card-img" alt="...">
+              <div class="card-img-overlay d-flex flex-column">
+                <h3 class="card-title text-center">{{ game.name }}</h3>
+                @if(isUser()) {
+                  <ion-button id="present-alert" color="primary" class="mt-auto" (click)="searchGame(game.id)" fill="block" expand="block">
+                    {{ "HOME.SEARCH_GAME" | translate }}
+                  </ion-button>
+                }
+              </div>
+            </div>
+          } @placeholder {
+            <div>
+              <ion-img src="assets/preloader-dark.svg" />
+            </div>
+          }
+      </swiper-slide>
+    }
+  </swiper-container>
+
+}
+
+<!-- <shared-component-user-card />  -->

@@ -1,0 +1,19 @@
+ion-input {
+  --color: var(--ion-color-secondary);  /* Cambia a cualquier color que desees */
+}
+
+form{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+ion-avatar{
+  width: 100px;
+  height: 100px;
+}
+
+.sc-ion-input-md-h{
+  --border-color: var(--ion-color-secondary);
+}
+

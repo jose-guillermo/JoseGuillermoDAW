@@ -1,0 +1,11 @@
+ion-app {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100vh !important; /* Asegura que ocupe toda la altura de la ventana */
+  background-color: var(--ion-color-light) !important;
+}
+
+.ion-page{
+  background-color: var(--ion-color-light) !important;
+
+}
